@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import TableView from "../components/tableView/tableView.vue";
+import TableView from "../components/tableView/TableView.vue";
 export default {
   components: {
     TableView,

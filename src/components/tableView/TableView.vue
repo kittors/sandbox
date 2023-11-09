@@ -1,5 +1,5 @@
 <template>
-  <div style="width: 1000px">
+  <div style="width: 100%">
     <HeaderNav @changeSheet="changeSheet" />
     <ControlViewVue
       @heightLight="heightLight('#808080')"
@@ -10,7 +10,6 @@
       @changeFontStyle="changeFontStyle"
     />
     <ve-table
-      :max-height="800"
       :scroll-width="0"
       row-key-field-name="rowKey"
       :fixed-header="true"
@@ -48,8 +47,8 @@ export default {
         // column resize min width
         minWidth: 30,
       },
-      rowsNumber: 100,
-      colsNumber: 30,
+      rowsNumber: 18,
+      colsNumber: 10,
       colEn: [],
       editOption: {
         beforeStartCellEditing: ({ row, column, cellValue }) => {
@@ -219,7 +218,7 @@ export default {
           key: "index",
           operationColumn: true,
           title: "",
-          width: 50,
+          width: 30,
           align: "center",
           renderBodyCell: ({ row, column, rowIndex }, h) => {
             return ++rowIndex;

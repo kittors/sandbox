@@ -1,12 +1,10 @@
 import Vue from "vue";
 import App from "./App.vue";
 import router from "./src/router";
-import store from "./src/store/index";
 import "./src/css/global.css";
 Vue.config.productionTip = false;
 import zhCN from "./src/assets/js/zh-CN";
 import { VeLocale } from "vue-easytable";
-console.log(store);
 const e = window.onerror;
 window.onerror = function (message, source, lineno, colno, error) {
   if (message === "ResizeObserver loop limit exceeded") {
@@ -30,6 +28,5 @@ Vue.use(VueEasytable);
 Vue.use(VXETable);
 new Vue({
   router,
-  store,
   render: (h) => h(App),
 }).$mount("#app");
