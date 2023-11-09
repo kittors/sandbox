@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <link rel="icon" href="<%= htmlWebpackPlugin.options.url %>favicon.ico">
+  <title>
+    <%= htmlWebpackPlugin.options.title %>
+  </title>
+  <% for (var i in htmlWebpackPlugin.options.cdnConfig&&htmlWebpackPlugin.options.cdnConfig.css) { %>
+    <link href="<%= htmlWebpackPlugin.options.cdnConfig.css[i] %>" rel="preload" as="style">
+    <link href="<%= htmlWebpackPlugin.options.cdnConfig.css[i] %>" rel="stylesheet">
+    <% } %>
+    <% for (var i in htmlWebpackPlugin.options.cdn&&htmlWebpackPlugin.options.cdn.js) { %>
+      <link href="<%= htmlWebpackPlugin.options.cdn.js[i] %>" rel="preload" as="script">
+      <% } %>
+</head>
+
+<body>
+      <noscript>
+        <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled.
+            Please enable it to continue.</strong>
+      </noscript>
+      <div id="app"></div>
+      <!-- built files will be auto injected -->
+      <% for (var i in htmlWebpackPlugin.options.cdnConfig&&htmlWebpackPlugin.options.cdnConfig.js) { %>
+        <script src="<%= htmlWebpackPlugin.options.cdnConfig.js[i] %>"></script>
+        <% } %>
+</body>
+
+</html>
